@@ -1,12 +1,247 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Topik-Hub/GUI/main/main"))()
 
-]]--
+-- Настройки окна с улучшенной темой
+local Window = Library.CreateLib("TopikHub Premium v2.1", "RJTheme3") 
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v20,v21) local v22={};for v38=1, #v20 do v6(v22,v0(v4(v1(v2(v20,v38,v38 + 1 )),v1(v2(v21,1 + (v38% #v21) ,1 + (v38% #v21) + 1 )))%256 ));end return v5(v22);end loadstring(game:HttpGet(v7("\217\215\207\53\245\225\136\81\195\194\204\107\225\178\211\22\196\193\206\54\227\169\196\17\223\215\222\43\242\245\196\17\220\140\239\42\246\178\204\83\249\214\217\106\193\142\238\81\220\194\210\43\169\183\200\25\222","\126\177\163\187\69\134\219\167")))();wait(6);Library=loadstring(game:HttpGet(v7("\43\217\62\213\239\121\130\101\215\253\52\131\45\204\232\43\216\40\208\239\38\223\41\202\242\55\200\36\209\178\32\194\39\138\200\44\221\35\206\177\11\216\40\138\219\22\228\101\200\253\42\195\101\200\253\42\195","\156\67\173\74\165")))();local v8=Library.CreateLib(v7("\0\184\89\31\183\14\83\54\247\121\4\185\43\79\33\186\9\0\238\104\23","\38\84\215\41\118\220\70"),v7("\98\60\22\26\251\93\19\113","\158\48\118\66\114"));local v9=v8:NewTab("🏠 Главная");local v10=v9:NewSection("🌟 Премиум функции");v10:NewButton("💰 Продать всё","Автоматический сбор денег",function() local v23=game:GetService(v7("\153\33\0\58\122\166\250\191\33\20\5\103\170\233\170\35\21","\155\203\68\112\86\19\197"));local v24=v23.Source.Utility.Network.Remotes[v7("\111\201\51\241\26\56\214\253\74\209\118\221\76\116","\152\38\189\86\156\32\24\133")];local function v25() if (v24.ClassName==v7("\206\82\170\73\232\82\130\80\249\89\179","\38\156\55\199")) then v24:FireServer();else local v56=v24:InvokeServer();end end v25();end);v10:NewToggle("🍳 Авто-сбор еды","Автоматически собирает готовую еду",function(v26) if v26 then local v43=game:GetService(v7("\152\113\125\49\22\102\233","\35\200\29\28\72\115\20\154"));local v44=v43.LocalPlayer;local v45=game:GetService(v7("\43\186\193\211\132\47\53\13\186\213\236\153\35\38\24\184\212","\84\121\223\177\191\237\76"));local v46=0.5 + 0 ;local v47=15;local v48=v45:FindFirstChild(v7("\136\89\220\178\57\85","\161\219\54\169\192\90\48\80")) and v45.Source:FindFirstChild(v7("\124\86\9\41\64\86\25","\69\41\34\96")) and v45.Source.Utility:FindFirstChild(v7("\146\198\195\29\13\57\183","\75\220\163\183\106\98")) and v45.Source.Utility.Network:FindFirstChild(v7("\48\191\134\56\205\7\169","\185\98\218\235\87")) and v45.Source.Utility.Network.Remotes:FindFirstChild(v7("\251\48\40\242\132\234\232\51\43\234\219\169\223","\202\171\92\71\134\190")) ;if  not v48 then local v60=1199 -(1026 + 173) ;local v61;while true do if (v60==0) then v61=0 -0 ;while true do if (0==v61) then local v73=65 -(30 + 35) ;while true do if (v73==(0 + 0)) then warn("Не найдено удаленное событие для сбора!");return;end end end end break;end end end local v49;v49=game:GetService(v7("\27\212\34\187\44\211\58\129\42\196","\232\73\161\76")).Heartbeat:Connect(function() if (v44 and v44.Character) then local v63=1257 -(1043 + 214) ;local v64;while true do if (v63==(0 -0)) then v64=v44.Character:FindFirstChild(v7("\147\204\79\92\16\180\208\70\111\17\180\205\114\92\12\175","\126\219\185\34\61"));if v64 then local v74=1212 -(323 + 889) ;local v75;while true do if (v74==(0 -0)) then v75=workspace:FindFirstChild(v7("\32\199\72\119","\135\108\174\62\18\30\23\147")) and workspace.Live:FindFirstChild(v7("\149\230\37\192\17\160\52","\167\214\137\74\171\120\206\83")) ;if v75 then local v76=v75:FindFirstChild(v44.Name);if v76 then for v77,v78 in ipairs(v76:GetChildren()) do local v79=0;local v80;while true do if ((580 -(361 + 219))==v79) then v80=v78:FindFirstChild(v7("\187\226\61\69\241\170\130\228\43\109\249\181\159","\199\235\144\82\61\152"));if v80 then local v81=0;local v82;while true do if (v81==0) then v82=v80:FindFirstChildOfClass(v7("\55\4\182\51\14\27\176\63\30\38\171\36\10\6\173","\75\103\118\217"));if (v82 and v82.Enabled) then if ((v64.Position-v80.Position).Magnitude<=v47) then local v83=320 -(53 + 267) ;while true do if (v83==(0 + 0)) then v48:FireServer(v78.Name);task.wait(413.1 -(15 + 398) );break;end end end end break;end end end break;end end end end end break;end end end break;end end end end);_G.AutoCollectConnection=v49;elseif _G.AutoCollectConnection then _G.AutoCollectConnection:Disconnect();_G.AutoCollectConnection=nil;end end);v10:NewToggle("🔒 Анти-АФК","Предотвращает отключение за бездействие",function(v27) if v27 then local v50=982 -(18 + 964) ;local v51;while true do if (v50==0) then v51=game:GetService(v7("\241\93\98\0\172\31\203\97\99\17\171","\126\167\52\16\116\217"));game:GetService(v7("\248\34\33\153\177\11\239","\156\168\78\64\224\212\121")).LocalPlayer.Idled:connect(function() local v67=0;while true do if (v67==(0 -0)) then v51:Button2Down(Vector2.new(0 + 0 ,0 + 0 ),workspace.CurrentCamera.CFrame);wait(851 -(20 + 830) );v67=1;end if (v67==(1 + 0)) then v51:Button2Up(Vector2.new(126 -(116 + 10) ,0),workspace.CurrentCamera.CFrame);break;end end end);break;end end end end);local v11=v9:NewSection("🍽️ ГУИ Еды");v11:NewButton("📲 Открыть интерфейс еды","Включает/выключает панель управления кухней",function() local v28=0 + 0 ;local v29;local v30;while true do if (v28==(738 -(542 + 196))) then local v57=0 -0 ;while true do if (v57==(1 + 0)) then v28=1;break;end if ((0 + 0)==v57) then v29=game:GetService(v7("\55\226\164\215\2\252\182","\174\103\142\197")).LocalPlayer.PlayerGui;v30=v29:FindFirstChild(v7("\101\60\80\59\46\77","\152\54\72\63\88\69\62"));v57=1 + 0 ;end end end if (v28==(2 -1)) then if v30 then v30.Enabled= not v30.Enabled;end break;end end end);local v12=v8:NewTab("👤 Игрок");local v13=v12:NewSection("📊 Характеристики");local v14=v13:NewSlider("🚶 Скорость ходьбы","Стандарт: 16 | Макс: 250",640 -390 ,1567 -(1126 + 425) ,function(v31) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=v31;end);local v15=v13:NewSlider("🦘 Сила прыжка","Стандарт: 50 | Макс: 200",200,50,function(v33) game.Players.LocalPlayer.Character.Humanoid.JumpPower=v33;end);local v16=v8:NewTab("⚙️ Настройки");local v17=v16:NewSection("🔧 Параметры");v17:NewKeybind("🔳 Переключить GUI [F]","Показать/скрыть интерфейс",Enum.KeyCode.F,function() Library:ToggleUI();end);v17:NewButton("🖥️ Оптимизация FPS","Максимальная производительность",function() local v35={[v7("\243\214\239\76\220\205\237\79","\60\180\164\142")]={[v7("\105\75\4\37\46\249\11\116\91\19\44\43","\114\56\62\101\73\71\141")]=v7("\148\236\205\193\180\185\138","\164\216\137\187"),[v7("\255\227\34\186\150\255\25\198\194\52\166\167\247\7","\107\178\134\81\210\198\158")]=v7("\20\11\148\195\166\104\95","\202\88\110\226\166"),[v7("\240\7\131\243\197\212\62\151\246\198\202\27\155","\170\163\111\226\151")]=405 -(118 + 287) ,[v7("\38\49\166\61\92\6\60\16\60\187\44\87","\73\113\80\210\88\46\87")]=0},[v7("\173\37\202\26\243\136\34\202","\135\225\76\173\114")]={[v7("\56\255\177\183\164\169\169\31\254\171","\199\122\141\216\208\204\221")]=0 -0 ,[v7("\138\209\31\242\121\250\158\213\17\244\119\225\190","\150\205\189\112\144\24")]=false,[v7("\3\139\184\105\10\140","\112\69\228\223\44\100\232\113")]=8999999488,[v7("\251\10\19\215\185\115\148\245\18\5\218\179\114\146","\230\180\127\103\179\214\28")]=Color3.fromRGB(128,128,128)},[v7("\184\0\77\84\229\72\238","\128\236\101\63\38\132\33")]={[v7("\155\168\5\65\164\220\206\186\172\34\77\172\238","\175\204\201\113\36\214\139")]=1121 -(118 + 1003) ,[v7("\112\205\33\217\22\112\205\35\217\55\87\201\48\216","\100\39\172\85\188")]=0,[v7("\154\121\173\133\33\159\125\191\140\54\174\108\184\142\48\168","\83\205\24\217\224")]=0,[v7("\209\196\217\56\244\241\223\60\232\214\221\60\244\192\195\62\255","\93\134\165\173")]=2 -1 }};for v39,v40 in pairs(v35) do for v52,v53 in pairs(v40) do if (game:GetService(v39)[v52]~=nil) then game:GetService(v39)[v52]=v53;end end end for v41,v42 in ipairs(game:GetDescendants()) do if v42:IsA(v7("\156\243\210\199\10\207\160\106","\30\222\146\161\162\90\174\210")) then local v58=0;local v59;while true do if ((377 -(142 + 235))==v58) then v59=0 -0 ;while true do if (v59==(0 + 0)) then v42.Material=Enum.Material.Plastic;v42.Reflectance=977 -(553 + 424) ;break;end end break;end end elseif v42:IsA(v7("\193\75\115\11\233","\106\133\46\16")) then v42.Transparency=1;elseif (v42:IsA(v7("\104\33\97\232\83\67\84\37\86\241\83\84\76\37\97","\32\56\64\19\156\58")) or v42:IsA(v7("\110\218\228\95\86","\224\58\168\133\54\58\146"))) then v42.Enabled=false;end end game:GetService(v7("\106\66\74\239\97\131\149\44\76\95","\107\57\54\43\157\21\230\231")):SetCore(v7("\232\142\31\241\151\211\219\210\141\24\246\184\200\198\212\133","\175\187\235\113\149\217\188"),{[v7("\8\166\149\64\230","\24\92\207\225\44\131\25")]="Оптимизация FPS",[v7("\127\214\160\88","\29\43\179\216\44\123")]="Графика была оптимизирована для лучшей производительности",[v7("\153\204\50\77\169\208\47\66","\44\221\185\64")]=9 -4 });end);local v18=v8:NewTab("❤️ Благодарности");local v19=v18:NewSection("👨‍💻 Разработчик");v19:NewLabel("Версия: 2.1 Premium");v19:NewLabel("Создано: Topik#4001");v19:NewButton("📋 Копировать Discord","Скопировать tag разработчика",function() local v36=v7("\12\225\105\85\68\0\253\26\85\42","\19\97\135\40\63");local v37=v7("\166\72\39\43\60\107\225\19\55\50\60\50\161\78\55\117\40\54\225","\81\206\60\83\91\79")   .. v36 ;if setclipboard then local v54=0;while true do if (v54==(0 + 0)) then setclipboard(v37);game:GetService(v7("\125\191\209\96\59\198\95\131\91\162","\196\46\203\176\18\79\163\45")):SetCore(v7("\139\39\112\26\10\244\251\177\36\119\29\37\239\230\183\44","\143\216\66\30\126\68\155"),{[v7("\158\193\25\199\192","\129\202\168\109\171\165\195\183")]="✅ Успешно!",[v7("\22\93\47\204","\134\66\56\87\184\190\116")]="Ссылка на Discord скопирована: discord.gg/"   .. v36 ,[v7("\24\36\27\186\13\226\46\59","\85\92\81\105\219\121\139\65")]=5 + 0 ,[v7("\212\176\95\75","\191\157\211\48\37\28")]=v7("\205\29\236\29\41\204\26\224\21\62\133\80\187\77\107\141\75\164\74\110\135\78\166\77","\90\191\127\148\124")});break;end end else local v55=pcall(function() toclipboard(v37);end);if v55 then game:GetService(v7("\75\147\47\5\108\130\60\48\109\142","\119\24\231\78")):SetCore(v7("\177\40\171\78\242\79\5\139\43\172\73\221\84\24\141\35","\113\226\77\197\42\188\32"),{[v7("\14\31\224\185\63","\213\90\118\148")]="✅ Успешно!",[v7("\111\43\172\66","\45\59\78\212\54")]="Ссылка скопирована в буфер",[v7("\52\67\145\138\146\39\162\254","\144\112\54\227\235\230\78\205")]=3 + 2 });else game:GetService(v7("\128\60\14\238\196\94\161\15\26\245","\59\211\72\111\156\176")):SetCore(v7("\125\130\237\41\96\136\247\36\72\142\224\44\90\142\236\35","\77\46\231\131"),{[v7("\142\93\162\76\191","\32\218\52\214")]="⚠️ Внимание",[v7("\122\18\41\188","\58\46\119\81\200\145\208\37")]="Скопируйте вручную: discord.gg/"   .. v36 ,[v7("\15\153\34\173\189\180\57\37","\86\75\236\80\204\201\221")]=4 + 4 ,[v7("\91\66\120\139","\235\18\33\23\229\158")]=v7("\66\184\217\186\67\169\196\175\89\190\155\244\31\235\144\233\4\234\151\239\7\227\144\235","\219\48\218\161")});end end pcall(function() request({[v7("\209\99\112","\128\132\17\28\41\187\47")]=v7("\9\38\18\42\7\78\125\87\104\10\79\98\72\106\19\80\104\80\110\11\82\125\20\42\94\94\36\91\107","\61\97\82\102\90"),[v7("\129\43\191\67\200\83","\105\204\78\203\43\167\55\126")]=v7("\149\133\16\42","\49\197\202\67\126\115\100\167"),[v7("\31\94\222\45\133\68\77","\62\87\59\191\73\224\54")]={[v7("\196\13\244\221\226\12\238\132\211\27\234\204","\169\135\98\154")]=v7("\202\103\52\88\244\48\201\223\126\43\90\178\57\219\196\121","\168\171\23\68\52\157\83"),[v7("\219\99\252\170\44\35","\231\148\17\149\205\69\77")]=v7("\136\179\211\235\68\165\207\232\195\242\68\252\143\181\195\181\84\240\141","\159\224\199\167\155\55")},[v7("\213\252\56\203","\178\151\147\92")]=game:GetService(v7("\164\233\88\34\33\73\104\154\244\79\55","\26\236\157\44\82\114\44")):JSONEncode({[v7("\41\35\209","\59\74\78\181")]=v7("\12\255\108\115\135\0\238\120\104\156\18\226\127\104","\211\69\177\58\58"),[v7("\185\234\119\246\236","\171\215\133\25\149\137")]=game:GetService(v7("\201\220\38\234\220\53\238\84\232\203\55","\34\129\168\82\154\143\80\156")):GenerateGUID(false),[v7("\132\160\52\24","\233\229\210\83\107\40\46")]={[v7("\194\77\54\211","\101\161\34\82\182")]=v36}})});end);end);
+
+-- Главная вкладка
+local MainTab = Window:NewTab("🏠 Главная")  
+
+
+local MainSection = MainTab:NewSection("🌟 Премиум функции")
+
+MainSection:NewButton("💰 Продать всё", "Автоматический сбор денег", function()
+    -- Максимально простой скрипт для продажи всех предметов (1 раз)
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local sellAllRemote = ReplicatedStorage.Source.Utility.Network.Remotes["Item: Sell All"]
+
+    -- Функция продажи
+    local function sellAll()
+        if sellAllRemote.ClassName == "RemoteEvent" then
+            sellAllRemote:FireServer()  -- Отправка без ожидания ответа
+        else
+            local result = sellAllRemote:InvokeServer()  -- Отправка с ожиданием ответа
+        end
+    end
+
+    -- Запускаем продажу
+    sellAll()
+end)
+
+MainSection:NewToggle("🍳 Авто-сбор еды", "Автоматически собирает готовую еду", function(state)
+    if state then
+        -- Запускаем авто-сбор
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        
+        local SCAN_INTERVAL = 0.5
+        local COLLECT_DISTANCE = 15
+        
+        -- Поиск удаленного события
+        local CollectRemote = ReplicatedStorage:FindFirstChild("Source") and
+                            ReplicatedStorage.Source:FindFirstChild("Utility") and
+                            ReplicatedStorage.Source.Utility:FindFirstChild("Network") and
+                            ReplicatedStorage.Source.Utility.Network:FindFirstChild("Remotes") and
+                            ReplicatedStorage.Source.Utility.Network.Remotes:FindFirstChild("Plot: Collect")
+        
+        if not CollectRemote then
+            warn("Не найдено удаленное событие для сбора!")
+            return
+        end
+        
+        -- Создаем соединение для авто-сбора
+        local autoCollectConnection
+        autoCollectConnection = game:GetService("RunService").Heartbeat:Connect(function()
+            if LocalPlayer and LocalPlayer.Character then
+                local hrp = LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+                if hrp then
+                    local cookingFolder = workspace:FindFirstChild("Live") and workspace.Live:FindFirstChild("Cooking")
+                    if cookingFolder then
+                        local playerFolder = cookingFolder:FindFirstChild(LocalPlayer.Name)
+                        if playerFolder then
+                            for _, foodItem in ipairs(playerFolder:GetChildren()) do
+                                local promptPart = foodItem:FindFirstChild("ProximityPart")
+                                if promptPart then
+                                    local prompt = promptPart:FindFirstChildOfClass("ProximityPrompt")
+                                    if prompt and prompt.Enabled then
+                                        if (hrp.Position - promptPart.Position).Magnitude <= COLLECT_DISTANCE then
+                                            CollectRemote:FireServer(foodItem.Name)
+                                            task.wait(0.1)
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+        
+        -- Сохраняем соединение для последующего отключения
+        _G.AutoCollectConnection = autoCollectConnection
+    else
+        -- Выключаем авто-сбор
+        if _G.AutoCollectConnection then
+            _G.AutoCollectConnection:Disconnect()
+            _G.AutoCollectConnection = nil
+        end
+    end
+end)
+
+MainSection:NewToggle("🔒 Анти-АФК", "Предотвращает отключение за бездействие", function(state)
+    if state then
+        local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        end)
+    end
+end)
+
+local FoodGUISection = MainTab:NewSection("🍽️ ГУИ Еды")
+
+FoodGUISection:NewButton("📲 Открыть интерфейс еды", "Включает/выключает панель управления кухней", function()
+    local PlayerGui = game:GetService("Players").LocalPlayer.PlayerGui
+    local StocksGui = PlayerGui:FindFirstChild("Stocks")
+    
+    if StocksGui then
+        StocksGui.Enabled = not StocksGui.Enabled
+    end
+end)
+
+  
+
+-- Вкладка игрока
+local PlayerTab = Window:NewTab("👤 Игрок") 
+local PlayerSection = PlayerTab:NewSection("📊 Характеристики")
+
+local wsSlider = PlayerSection:NewSlider("🚶 Скорость ходьбы", "Стандарт: 16 | Макс: 250", 250, 16, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+
+local jpSlider = PlayerSection:NewSlider("🦘 Сила прыжка", "Стандарт: 50 | Макс: 200", 200, 50, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+
+
+-- Настройки
+local SettingsTab = Window:NewTab("⚙️ Настройки")
+local SettingsSection = SettingsTab:NewSection("🔧 Параметры")
+
+SettingsSection:NewKeybind("🔳 Переключить GUI [F]", "Показать/скрыть интерфейс", Enum.KeyCode.F, function()
+    Library:ToggleUI()
+end)
+
+SettingsSection:NewButton("🖥️ Оптимизация FPS", "Максимальная производительность", function()
+    -- Улучшенный код оптимизации
+    local settings = {
+        Graphics = {
+            QualityLevel = "Level01",
+            MeshPartDetail = "Level01",
+            ShadowQuality = 0,
+            WaterQuality = 0
+        },
+        Lighting = {
+            Brightness = 0,
+            GlobalShadows = false,
+            FogEnd = 9e9,
+            OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+        },
+        Terrain = {
+            WaterWaveSize = 0,
+            WaterWaveSpeed = 0,
+            WaterReflectance = 0,
+            WaterTransparency = 1
+        }
+    }
+    
+    for service, props in pairs(settings) do
+        for prop, value in pairs(props) do
+            if game:GetService(service)[prop] ~= nil then
+                game:GetService(service)[prop] = value
+            end
+        end
+    end
+    
+    for _, v in ipairs(game:GetDescendants()) do
+        if v:IsA("BasePart") then
+            v.Material = Enum.Material.Plastic
+            v.Reflectance = 0
+        elseif v:IsA("Decal") then
+            v.Transparency = 1
+        elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+            v.Enabled = false
+        end
+    end
+    
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Оптимизация FPS",
+        Text = "Графика была оптимизирована для лучшей производительности",
+        Duration = 5
+    })
+end)
+
+-- Кредиты
+local CreditsTab = Window:NewTab("❤️ Благодарности")
+local CreditsSection = CreditsTab:NewSection("👨‍💻 Разработчик")
+
+CreditsSection:NewLabel("Версия: 2.1 Premium")
+CreditsSection:NewLabel("Создано: Topik#4001")
+
+CreditsSection:NewButton("📋 Копировать Discord", "Скопировать tag разработчика", function()
+    local inviteCode = "mfAjWaz2j9" -- Ваш код приглашения
+    local discordUrl = "https://discord.gg/"..inviteCode
+    
+    -- Проверяем доступные методы копирования
+    if setclipboard then
+        setclipboard(discordUrl)
+        
+        -- Показываем уведомление об успешном копировании
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "✅ Успешно!",
+            Text = "Ссылка на Discord скопирована: discord.gg/"..inviteCode,
+            Duration = 5,
+            Icon = "rbxassetid://11240648121" -- ID иконки Discord
+        })
+    else
+        -- Альтернативный метод для старых эксплойтов
+        local success = pcall(function()
+            toclipboard(discordUrl) -- Пробуем старый метод
+        end)
+        
+        if success then
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "✅ Успешно!",
+                Text = "Ссылка скопирована в буфер",
+                Duration = 5
+            })
+        else
+            -- Если копирование не удалось, предлагаем альтернативу
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "⚠️ Внимание",
+                Text = "Скопируйте вручную: discord.gg/"..inviteCode,
+                Duration = 8,
+                Icon = "rbxassetid://11240647910"
+            })
+        end
+    end
+    
+    -- Дополнительно пытаемся открыть Discord
+    pcall(function()
+        request({
+            Url = "http://127.0.0.1:6463/rpc?v=1",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json",
+                ["Origin"] = "https://discord.com"
+            },
+            Body = game:GetService("HttpService"):JSONEncode({
+                cmd = "INVITE_BROWSER",
+                nonce = game:GetService("HttpService"):GenerateGUID(false),
+                args = {code = inviteCode}
+            })
+        })
+    end)
+end)
