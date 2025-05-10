@@ -7,7 +7,7 @@ wait(6)
 Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Topik-Hub/GUI/main/main"))()
 
 -- Настройки окна с улучшенной темой
-local Window = Library.CreateLib("TopikHub Premium v2.1", "RJTheme3") 
+local Window = Library.CreateLib("TopikHub Premium v1.2", "RJTheme3") 
 
 
 -- Главная вкладка
@@ -193,7 +193,7 @@ end)
 local CreditsTab = Window:NewTab("❤️ Благодарности")
 local CreditsSection = CreditsTab:NewSection("👨‍💻 Разработчик")
 
-CreditsSection:NewLabel("Версия: 2.1 Premium")
+CreditsSection:NewLabel("Версия: 1.2 Premium")
 CreditsSection:NewLabel("Создано: Topik#4001")
 
 CreditsSection:NewButton("📋 Копировать Discord", "Скопировать tag разработчика", function()
