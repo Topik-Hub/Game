@@ -1,3 +1,9 @@
+-- Показываем логотип перед загрузкой интерфейса
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Topik-Hub/GUI/main/logo"))()
+
+-- Ждем некоторое время
+wait(6)
+
 Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Topik-Hub/GUI/main/main"))()
 
 -- Настройки окна с улучшенной темой
