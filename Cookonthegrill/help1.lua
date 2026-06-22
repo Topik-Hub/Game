@@ -79,7 +79,7 @@ return function(Window)
         end
     end)
 
-    Ctrl:NewSlider("⏱ Интервал (сек)", "", 30, 10, function(v) Interval = v end)
+    Ctrl:NewSlider("⏱ Интервал (мин)", "", 4, 1, function(v) Interval = v * 60 end)
 
     itemDropdown = Ctrl:NewDropdown("📦 Предмет", "Выбери и добавь в список", {"сначала выбери раздел"}, function(sel)
         if sel == "сначала выбери раздел" then return end
