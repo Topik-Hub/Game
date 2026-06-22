@@ -1,0 +1,25 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/eeeerrrrf3/TopikHub_GUI/main/main1.lua"))()
+local Window = Library.CreateLib("TopikHub Premium ✨", "RJTheme3")
+
+-- ===== ТВОИ ВКЛАДКИ =====
+local Tab = Window:NewTab("🎮 Предметы")
+local Section = Tab:NewSection("🔧 Универсальные функции")
+Section:NewButton("🪚 Получить Бензопилу (Фейк)", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/eeeerrrrf3/main/main/Universalallgame/chainsaw", true))()
+end)
+-- ... остальные твои кнопки ...
+
+local main = Window:NewTab("👤 Игрок")
+local ms = main:NewSection("⚡ Характеристики")
+ms:NewSlider("🚶 Скорость ходьбы", "", 200, 16, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+-- ... остальное ...
+
+local Settings = Window:NewTab("⚙️ Настройки")
+Settings:NewSection("🔧 Параметры"):NewKeybind("🔘 Переключить GUI", "", Enum.KeyCode.F, function()
+    Library:ToggleUI()
+end)
+
+-- ===== АВТОПОКУПКА (с GitHub) =====
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Topik-Hub/Game/main/Cookonthegrill/help1.lua"))()(Window)
