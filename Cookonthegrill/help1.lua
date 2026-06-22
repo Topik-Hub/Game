@@ -1,10 +1,6 @@
 --[[
-  MeatShop AutoBuy — модуль для TopikHub GUI
-  Загружается с GitHub, добавляет вкладку 🛒 Автопокупка
-
-  Зависимости:
-    - Библиотека TopikHub (Window:NewTab, NewDropdown, NewToggle, NewSlider, NewButton)
-    - Игра с MeatShop в PlayerGui
+  MeatShop AutoBuy — модуль для TopikHub GUI v2
+  Покупает ВСЁ доступное количество за цикл
 ]]
 
 return function(Window)
@@ -31,6 +27,16 @@ return function(Window)
         return n * ({K=1e3,M=1e6,B=1e9,T=1e12})[suf] or 1
     end
 
+    -- Сколько штук доступно для покупки
+    local function GetStockCount(item)
+        local label = item:GetChildren()[5]:FindFirstChild("StockLabel")
+        if not label then return 0 end
+        local t = label.Text
+        if t == "Always In Stock" then return math.huge end
+        if t == "Out of Stock" then return 0 end
+        return tonumber(t:match("In Stock: (%d+)")) or 0
+    end
+
     -- Вкладка
     local Tab = Window:NewTab("🛒 Автопокупка")
     local Ctrl = Tab:NewSection("⚙️ Управление")
@@ -49,11 +55,16 @@ return function(Window)
                                     if name ~= "" then
                                         for _, want in ipairs(WantList) do
                                             if want.name == name then
-                                                local stock = item:GetChildren()[5]:FindFirstChild("StockLabel")
-                                                local stxt = stock and stock.Text or ""
-                                                if stxt=="Always In Stock" or (stxt:find("In Stock") and tonumber(stxt:match("%d+") or 0)>0) then
+                                                local stock = GetStockCount(item)
+                                                local toBuy = stock == math.huge and 9999 or stock
+                                                local bought = 0
+                                                for i = 1, toBuy do
                                                     remote:FireServer(name)
-                                                    task.wait(0.3)
+                                                    bought = bought + 1
+                                                    task.wait(0.2)
+                                                end
+                                                if bought > 0 then
+                                                    print("✅ " .. name .. " x" .. bought)
                                                 end
                                             end
                                         end
@@ -70,7 +81,6 @@ return function(Window)
 
     Ctrl:NewSlider("⏱ Интервал (сек)", "", 30, 10, function(v) Interval = v end)
 
-    -- Dropdown предметов (создаём раньше, чтоб раздел мог его обновить)
     itemDropdown = Ctrl:NewDropdown("📦 Предмет", "Выбери и добавь в список", {"сначала выбери раздел"}, function(sel)
         if sel == "сначала выбери раздел" then return end
         for _, v in ipairs(CurrentItems) do
@@ -90,7 +100,6 @@ return function(Window)
         end
     end)
 
-    -- Dropdown разделов
     local pageShort = {"Common","Uncommon","Rare","Legendary","Mythic","Exotic","Unknown","Secret","Impossible"}
     local pageNames = {"CommonPage","UncommonPage","RarePage","LegendaryPage","MythicPage","ExoticPage","UnknownPage","SecretPage","ImpossiblePage"}
 
@@ -122,7 +131,6 @@ return function(Window)
         end
     end)
 
-    -- Список
     local List = Tab:NewSection("📋 Мои предметы")
     List:NewButton("🧹 Очистить список", "", function() WantList = {} end)
     List:NewButton("📜 Показать список", "", function()
@@ -135,5 +143,5 @@ return function(Window)
         game:GetService("StarterGui"):SetCore("SendNotification", {Title = "📋 ("..#WantList..")", Text = msg, Duration = 5})
     end)
 
-    print("✅ MeatShop AutoBuy загружен!")
+    print("✅ MeatShop AutoBuy v2 — покупает всё количество!")
 end
